@@ -1,4 +1,4 @@
-package com.example.springcloud.app.gateway.gateway_server;
+package com.example.springcloud.app.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
