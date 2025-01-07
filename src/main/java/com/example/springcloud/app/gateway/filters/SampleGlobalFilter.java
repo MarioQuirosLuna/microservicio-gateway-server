@@ -18,6 +18,9 @@ import reactor.core.publisher.Mono;
 @Component
 public class SampleGlobalFilter implements GlobalFilter, Ordered {
 
+    //* PERMITE AGREGAR PARAMETROS PARA COOKIES Y HEADERS
+    //* ES PARA IMPLEMENTAR CONFIGURACIÓN A TODAS LAS RUTAS
+
     private final Logger logger = LoggerFactory.getLogger(SampleGlobalFilter.class);
 
     @Override
@@ -48,7 +51,7 @@ public class SampleGlobalFilter implements GlobalFilter, Ordered {
             });
 
             mutatedExchange.getResponse().getCookies().add("color", ResponseCookie.from("color", "red").build());
-            mutatedExchange.getResponse().getHeaders().setContentType(MediaType.TEXT_PLAIN);
+            //mutatedExchange.getResponse().getHeaders().setContentType(MediaType.TEXT_PLAIN);
         }));
     }
 
