@@ -23,6 +23,12 @@ spring:
   cloud:
     gateway:
       routes:
+      - id: microservicio-users
+        uri: lb://microservicio-users
+        predicates:
+        - Path=/api/users
+        filters:
+        - StripPrefix=2
       - id: microservicio-product
         uri: lb://microservicio-product
         predicates:
