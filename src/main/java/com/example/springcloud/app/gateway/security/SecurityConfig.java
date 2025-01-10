@@ -37,6 +37,7 @@ public class SecurityConfig {
                 .oauth2Client(withDefaults())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(jwt -> jwt.jwtAuthenticationConverter(new Converter<Jwt, Mono<AbstractAuthenticationToken>>(){
 
+                    @SuppressWarnings("null")
                     @Override
                     @Nullable
                     public Mono<AbstractAuthenticationToken> convert(Jwt source) {
